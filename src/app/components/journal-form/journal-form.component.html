@@ -1,0 +1,110 @@
+<md-card class='example-configuration'>
+
+  <h2 class="example-h2">Coffee brewer's journal</h2>
+
+  <md-card-content>
+    <form class="example-form" #journalForm="ngForm" (ngSubmit)="onSubmit()">
+      <md-input-container class="example-full-width">
+        <input md-input placeholder="Coffee" [(ngModel)]="model.coffee" name="coffee">
+      </md-input-container>
+
+      <md-input-container class="example-full-width">
+        <input md-input placeholder="Roastery" [(ngModel)]="model.roastery" name="roastery">
+      </md-input-container>
+
+      <md-select placeholder="Method" [(ngModel)]="model.method" name="method">
+        <md-option *ngFor="let method of methods" [value]="method.value">
+          {{ method.viewValue }}
+        </md-option>
+      </md-select>
+
+      <md-input-container class="example-full-width">
+        <input md-input placeholder="Coffee dose" [(ngModel)]="model.coffeeDose" name="coffeeDose">
+      </md-input-container>
+
+      <md-input-container class="example-full-width">
+        <input md-input placeholder="Water weight" [(ngModel)]="model.waterWeight" name="waterWeight">
+      </md-input-container>
+
+      <md-input-container class="example-full-width">
+        <input md-input placeholder="Water temp" [(ngModel)]="model.waterTemp" name="waterTemp">
+      </md-input-container>
+
+      <md-input-container class="example-full-width">
+        <input md-input placeholder="Brewing time" [(ngModel)]="model.brewingTime" name="brewingTime">
+      </md-input-container>
+
+      <section class="example-section">
+        <label class="example-margin">Sweet:</label>
+        <md-radio-group [(ngModel)]="model.sweet" name="sweet">
+          <md-radio-button value="1"></md-radio-button>
+          <md-radio-button value="2"></md-radio-button>
+          <md-radio-button value="3"></md-radio-button>
+          <md-radio-button value="4"></md-radio-button>
+          <md-radio-button value="5"></md-radio-button>
+        </md-radio-group>
+      </section>
+
+      <section class="example-section">
+        <label class="example-margin">Body:</label>
+        <md-radio-group [(ngModel)]="model.body" name="body">
+          <md-radio-button value="1"></md-radio-button>
+          <md-radio-button value="2"></md-radio-button>
+          <md-radio-button value="3"></md-radio-button>
+          <md-radio-button value="4"></md-radio-button>
+          <md-radio-button value="5"></md-radio-button>
+        </md-radio-group>
+      </section>
+
+      <section class="example-section">
+        <label class="example-margin">Acidic:</label>
+        <md-radio-group [(ngModel)]="model.acidic" name="acidic">
+          <md-radio-button value="1"></md-radio-button>
+          <md-radio-button value="2"></md-radio-button>
+          <md-radio-button value="3"></md-radio-button>
+          <md-radio-button value="4"></md-radio-button>
+          <md-radio-button value="5"></md-radio-button>
+        </md-radio-group>
+      </section>
+
+      <section class="example-section">
+        <label class="example-margin">Finish:</label>
+        <md-radio-group [(ngModel)]="model.finish" name="finish">
+          <md-radio-button value="1"></md-radio-button>
+          <md-radio-button value="2"></md-radio-button>
+          <md-radio-button value="3"></md-radio-button>
+          <md-radio-button value="4"></md-radio-button>
+          <md-radio-button value="5"></md-radio-button>
+        </md-radio-group>
+      </section>
+
+      <section class="example-section">
+        <label class="example-margin">Bitter:</label>
+        <md-radio-group [(ngModel)]="model.bitter" name="bitter">
+          <md-radio-button value="1"></md-radio-button>
+          <md-radio-button value="2"></md-radio-button>
+          <md-radio-button value="3"></md-radio-button>
+          <md-radio-button value="4"></md-radio-button>
+          <md-radio-button value="5"></md-radio-button>
+        </md-radio-group>
+      </section>
+
+      <section class="example-section">
+        <label class="example-margin">Overall:</label>
+        <md-radio-group [(ngModel)]="model.overall" name="overall">
+          <md-radio-button value="1"></md-radio-button>
+          <md-radio-button value="2"></md-radio-button>
+          <md-radio-button value="3"></md-radio-button>
+          <md-radio-button value="4"></md-radio-button>
+          <md-radio-button value="5"></md-radio-button>
+        </md-radio-group>
+      </section>
+
+      <md-input-container class="example-full-width">
+        <textarea md-input placeholder="Note"></textarea>
+      </md-input-container>
+
+      <button md-raised-button type="submit">Register</button>
+    </form>
+  </md-card-content>
+</md-card>

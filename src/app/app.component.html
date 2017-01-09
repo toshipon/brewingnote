@@ -1,3 +1,19 @@
-<h1>
-  {{title}}
-</h1>
+<div>
+  <md-toolbar color="primary">
+    <h1>{{title}}</h1>
+
+    <md-toolbar-row>
+      <span>Menu</span>
+      <span class="example-spacer"></span>
+      <nav>
+        <a routerLink="/journal" routerLinkActive="active">
+          <md-icon class="example-icon">favorite</md-icon>
+        </a>
+        <a routerLink="/cupping" routerLinkActive="active">
+          <md-icon class="example-icon">delete</md-icon>
+        </a>
+      </nav>
+    </md-toolbar-row>
+  </md-toolbar>
+  <router-outlet></router-outlet>
+</div>
