@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { JournalService } from '../../services/journal.service';
 import { Journal } from '../../models/journal';
 
 @Component({
   selector: 'app-journal-form',
   templateUrl: './journal-form.component.html',
-  styleUrls: ['./journal-form.component.css']
+  styleUrls: ['./journal-form.component.css'],
+  providers: [JournalService]
 })
 export class JournalFormComponent implements OnInit {
 
@@ -20,14 +24,24 @@ export class JournalFormComponent implements OnInit {
     {value: 'vacuumpot', viewValue: 'Vaccum pot'}
   ];
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private journalService: JournalService
+  ) { }
 
   ngOnInit() {
   }
 
-  onSubmit() {
-    console.log('onSubmit!');
-    console.dir(this.model);
-  }
+  onSubmit(e) {
+    e.preventDefault();
 
+    this.journalService.create(this.model)
+      .then((res) => {
+        console.log(`A journal(${res}) is created!`);
+        this.router.navigate(['/journal']);
+      })
+      .catch((res) => {
+        console.log(res);
+      });
+  }
 }

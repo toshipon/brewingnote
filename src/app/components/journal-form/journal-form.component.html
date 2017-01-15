@@ -3,7 +3,7 @@
   <h2 class="example-h2">Coffee brewer's journal</h2>
 
   <md-card-content>
-    <form class="example-form" #journalForm="ngForm" (ngSubmit)="onSubmit()">
+    <form class="example-form" #journalForm="ngForm" (ngSubmit)="onSubmit($event)">
       <md-input-container class="example-full-width">
         <input md-input placeholder="Coffee" [(ngModel)]="model.coffee" name="coffee">
       </md-input-container>
